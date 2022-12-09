@@ -1,7 +1,7 @@
 // Config
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config/config.env" });
-const port = process.env.DEVELOPMENT || 5000;
+const port = process.env.PORT || 5001;
 const connectDB = require("./config/db");
 
 // Connect to DB
