@@ -37,6 +37,15 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.options("http://localhost:5500/", cors());
+app.use(function (req, res, next) {
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 const fileupload = require("express-fileupload");
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
